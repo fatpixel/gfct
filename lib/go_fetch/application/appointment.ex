@@ -13,12 +13,12 @@ defmodule GoFetch.Appointment do
   alias GoFetch.Repo
 
   @doc """
-  Update this function to return all appointments within the given range.
+  Get all appointments between a start date and end date
   """
   def get_appointments_by_date(%{start_date: start_date, end_date: end_date}) do
-    Repo.all(__MODULE__)
+    from(a in __MODULE__, where: a.date >= ^start_date and a.date <= ^end_date)
+    |> Repo.all
   end
-
   schema "appointments" do
     field :date, :utc_datetime
     field :reason, :string
