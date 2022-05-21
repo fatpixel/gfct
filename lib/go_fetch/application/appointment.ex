@@ -13,10 +13,11 @@ defmodule GoFetch.Appointment do
   alias GoFetch.Repo
 
   @doc """
-  Get all appointments between a start date and end date
+  Gets all appointments between a start date and end date
+  sorted by date in ascending order
   """
   def get_appointments_by_date(%{start_date: start_date, end_date: end_date}) do
-    from(a in __MODULE__, where: a.date >= ^start_date and a.date <= ^end_date)
+    from(a in __MODULE__, where: a.date >= ^start_date and a.date <= ^end_date, order_by: [asc: :date])
     |> Repo.all
   end
   schema "appointments" do
