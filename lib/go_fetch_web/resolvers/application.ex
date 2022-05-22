@@ -10,7 +10,7 @@ defmodule GoFetchWeb.Resolvers.Application do
     {:ok, Doctor.get_doctors()}
   end
 
-  def list_appointments_by_date(_, args, _) do
-    {:ok, Appointment.get_appointments_by_date(args)}
+  def list_appointments_by_date_for_doctor(_, args, _) do
+    {:ok, Appointment.get_appointments_by_date_for_doctor(args)}
   end
 end

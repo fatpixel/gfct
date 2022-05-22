@@ -1,10 +1,11 @@
 import "phoenix_html";
-
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { ApolloClient, ApolloProvider } from "@apollo/client";
 import { InMemoryCache } from "@apollo/client/cache";
-import Home from "./Home";
+import Schedule from "./components/Schedule";
+
+import "../css/app.scss";
 
 const client = new ApolloClient({
   uri: "/api",
@@ -13,7 +14,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Home />
+    <Schedule />
   </ApolloProvider>,
   document.getElementById("react-app")
 );

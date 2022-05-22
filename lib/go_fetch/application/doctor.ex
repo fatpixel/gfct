@@ -5,7 +5,6 @@ defmodule GoFetch.Doctor do
 
   use Ecto.Schema
   import Ecto.Changeset
-  import Ecto.Query
 
   alias GoFetch.Appointment
   alias GoFetch.Repo

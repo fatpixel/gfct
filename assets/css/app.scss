@@ -13,7 +13,9 @@
   padding: 12px;
   width: 500px;
 
-  .appointment-date {
-    margin-right: 5px;
+  .appointment__date,
+  .appointment__time {
+    white-space: nowrap;
   }
+
 }
